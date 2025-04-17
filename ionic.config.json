@@ -1,0 +1,7 @@
+{
+  "name": "jitCall1",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
