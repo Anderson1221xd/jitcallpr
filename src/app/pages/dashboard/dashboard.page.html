@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Dashboard</ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="danger" (click)="logout()">Logout</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <h2>Tus contactos</h2>
+
+  <ion-list *ngIf="contacts.length > 0; else noContacts">
+    <ion-item *ngFor="let contact of contacts">
+      <ion-label>
+        <h3>{{ contact.name }}</h3>
+        <p>{{ contact.phone }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-button expand="block" [routerLink]="['/add-contact']">
+    Agregar Contacto
+  </ion-button>
+
+  <ng-template #noContacts>
+    <p>No tienes contactos aún.</p>
+  </ng-template>
+</ion-content>

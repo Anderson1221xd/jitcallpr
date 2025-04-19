@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Agregar Contacto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form (ngSubmit)="addContact()">
+    <ion-item>
+      <ion-label position="floating">Teléfono del contacto</ion-label>
+      <ion-input
+        type="tel"
+        [(ngModel)]="phone"
+        name="phone"
+        required
+      ></ion-input>
+    </ion-item>
+
+    <ion-button expand="full" type="submit" class="ion-margin-top"
+      >Agregar</ion-button
+    >
+  </form>
+
+  <ion-text color="danger" *ngIf="errorMessage">{{ errorMessage }}</ion-text>
+</ion-content>

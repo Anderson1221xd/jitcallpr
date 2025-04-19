@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form (ngSubmit)="registerUser(registerForm)" #registerForm="ngForm">
+    <ion-item>
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input
+        type="text"
+        [(ngModel)]="name"
+        name="name"
+        required
+      ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Apellido</ion-label>
+      <ion-input
+        type="text"
+        [(ngModel)]="lastname"
+        name="lastname"
+        required
+      ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Teléfono</ion-label>
+      <ion-input
+        type="tel"
+        [(ngModel)]="phone"
+        name="phone"
+        required
+      ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Correo</ion-label>
+      <ion-input
+        type="email"
+        [(ngModel)]="email"
+        name="email"
+        required
+      ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input
+        type="password"
+        [(ngModel)]="password"
+        name="password"
+        required
+      ></ion-input>
+    </ion-item>
+
+    <ion-button expand="block" type="submit" [disabled]="registerForm.invalid">
+      Registrarse
+    </ion-button>
+  </form>
+</ion-content>
